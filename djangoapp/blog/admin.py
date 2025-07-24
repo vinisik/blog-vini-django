@@ -1,8 +1,7 @@
-from blog.models import Category, Tag, Page, Post
+from blog.models import Category, Page, Post, Tag
 from django.contrib import admin
 
 
-# Registrar tages no admin
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
     list_display = 'id', 'name', 'slug',
@@ -15,7 +14,6 @@ class TagAdmin(admin.ModelAdmin):
     }
 
 
-# Registrar categorias no admin
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = 'id', 'name', 'slug',
@@ -28,7 +26,6 @@ class CategoryAdmin(admin.ModelAdmin):
     }
 
 
-# Registrar pages no admin
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):
     list_display = 'id', 'title', 'is_published',
@@ -43,7 +40,6 @@ class PageAdmin(admin.ModelAdmin):
     }
 
 
-# Registrar posts no admin
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = 'id', 'title', 'is_published',  'created_by',
@@ -58,3 +54,11 @@ class PostAdmin(admin.ModelAdmin):
         "slug": ('title',),
     }
     autocomplete_fields = 'tags', 'category',
+
+    def save_model(self, request, obj, form, change):
+        if change:
+            obj.updated_by = request.user  # type: ignore
+        else:
+            obj.created_by = request.user  # type: ignore
+
+        obj.save()

@@ -183,13 +183,11 @@ html,
   align-items: center;
   gap: var(--spacing-base);
   flex-wrap: wrap; /* Para responsividade */
-  position: relative;
+  padding: 0;
 }
 
 .blog-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: left;
   margin: 0;
 }
 
@@ -272,6 +270,11 @@ html,
 }
 
 /* Menu */
+.menu {
+  margin: 0 auto;
+  transform: translateX(-10%);
+}
+
 .menu-items,
 .menu-item {
   margin: 0;
