@@ -248,13 +248,21 @@ html,
 }
 
 /* Header */
-.blog-title,
-.blog-description {
+.blog-title {
   margin: 0;
 }
 
+.descriptions-wrapper {
+  padding: var(--spacing-smlr);
+  max-width: var(--mw-grid);
+  margin: auto;
+}
+
 .blog-description {
-  text-align: justify;
+  text-align: center;
+  padding: 0;
+  color: hsl(var(--clr-gray-dk));
+  font-size: var(--fs-smlr) ;
 }
 
 /* Menu */
@@ -327,8 +335,8 @@ html,
 
 /* Footer */
 .footer {
-  background: hsl(var(--clr-gray-dk));
-  color: hsl(var(--clr-white));
+  background: black;
+  color: white;
 }
 
 .footer a {
