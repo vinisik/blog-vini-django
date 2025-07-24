@@ -215,6 +215,7 @@ html,
 
 .section-gap {
   padding: var(--spacing-smlr);
+  color: black;
 }
 
 /* Utilities */
@@ -388,6 +389,7 @@ html,
 }
 
 .post-meta-link:hover {
+  color: hsl(var(--clr-gray-base)/0.6);
   text-decoration: none;
 }
 
@@ -444,7 +446,6 @@ html,
 
 .card {
   border: 1px solid hsl(var(--clr-gray-ltst));
-  border-radius: var(--br-base);
   box-shadow: 0 5px 5px hsl(var(--clr-black) / 0.1);
   transition: scale 300ms ease-in-out, box-shadow 300ms ease-in-out;
 }
