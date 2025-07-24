@@ -4,10 +4,7 @@
 
       <!-- Linha principal do header -->
       <div class="header-row">
-        <!-- Título -->
-        <h1 class="blog-title">
-          <a class="blog-link" href="/">{{ site_setup.title }} <i class="fa-solid fa-code"></i></a>
-        </h1>
+        
 
         <!-- Menu centralizado -->
         {% if site_setup.show_menu %}
@@ -25,6 +22,11 @@
             </ul>
           </nav>
         {% endif %}
+
+        <!-- Título -->
+        <h1 class="blog-title">
+          <a class="blog-link" href="/">{{ site_setup.title }} <i class="fa-solid fa-code"></i></a>
+        </h1>
 
         <!-- Barra de pesquisa -->
          {% if site_setup.show_search %}
