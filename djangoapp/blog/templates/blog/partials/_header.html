@@ -28,7 +28,7 @@
 
           {% if site_setup.show_search %}
             <div class="search">
-              <form class="search-form" action="#" method="get">
+              <form class="search-form" action="{% url "blog:search" %}" method="get">
                 <div class="search-content">
                   <label class="sr-only" id="search-label" for="search-input">Search</label>
                   <input
@@ -37,6 +37,7 @@
                     name="search"
                     id="search-input"
                     placeholder="Pesquisar"
+                    value="{{ search_value }}"
                   >
                   <button class="search-btn" type="submit" aria-labelledby="search-label">
                     <i class="fa fa-search"></i>
@@ -45,6 +46,15 @@
               </form>
             </div>
           {% endif %}
+          <span class="socials">
+            <a class="socials-link" href="https://github.com/vinisik" target="_blank">
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+
+            <a class="socials-link" href="">
+            <i class="fa-brands fa-square-instagram"></i>
+          </a>
+          </span>
         </div> <!-- /header-right -->
 
       </div> <!-- /header-row -->

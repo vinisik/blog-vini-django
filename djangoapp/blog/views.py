@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 PER_PAGE = 9
 
-
+# Pagina inicial
 def index(request):
     posts = Post.objects.filter(is_published=True)
 
@@ -22,6 +22,7 @@ def index(request):
     )
 
 
+# Posts por autor
 def created_by(request, author_pk):
     posts = Post.objects.filter(is_published=True)\
         .filter(created_by__pk=author_pk)
@@ -39,6 +40,7 @@ def created_by(request, author_pk):
     )
 
 
+# Posts por categoria
 def category(request, slug):
     posts = Post.objects.filter(is_published=True)\
         .filter(category__slug=slug)
@@ -56,6 +58,7 @@ def category(request, slug):
     )
 
 
+# Posts por tag
 def tag(request, slug):
     posts = Post.objects.filter(is_published=True)\
         .filter(tags__slug=slug)
@@ -73,6 +76,7 @@ def tag(request, slug):
     )
 
 
+# Sistema de busca
 def search(request):
     search_value = request.GET.get('search', '').strip()
 
@@ -95,6 +99,7 @@ def search(request):
     )
 
 
+# Páginas estáticas
 def page(request, slug):
     return render(
         request,
@@ -105,6 +110,7 @@ def page(request, slug):
     )
 
 
+# Conteúdo do post
 def post(request, slug):
     post = (Post.objects.filter(is_published=True)
             .filter(slug=slug)
