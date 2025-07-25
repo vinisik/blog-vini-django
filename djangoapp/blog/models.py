@@ -102,7 +102,7 @@ class Post(models.Model):
 
     objects = PostManager()
 
-    title = models.CharField(max_length=65,)
+    title = models.CharField(max_length=90,)
     slug = models.SlugField(
         unique=True, default="",
         null=False, blank=True, max_length=255

@@ -160,6 +160,10 @@ input[type='search']::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
+img {
+  margin: auto;
+}
+
 /* Blog */
 body,
 html,
@@ -184,6 +188,12 @@ html,
   gap: var(--spacing-base);
   flex-wrap: wrap; /* Para responsividade */
   padding: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-base);
 }
 
 .blog-title {
@@ -446,10 +456,11 @@ html,
 }
 
 /* Card Grid */
-.card-grid {
+.card-grid { 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(32rem, 100%), 1fr));
   gap: var(--spacing-base);
+  padding: var(--spacing-base);
 }
 
 .card {
@@ -516,3 +527,4 @@ html,
 .card-action-link:hover {
   text-decoration: none;
 }
+

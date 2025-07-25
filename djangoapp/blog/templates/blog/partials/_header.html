@@ -1,54 +1,53 @@
 <header class="header">
   <div class="header-wrapper">
     <div class="section-gap">
-
-      <!-- Linha principal do header -->
       <div class="header-row">
-        
-        <!-- Título -->
+
+        <!-- Título à esquerda -->
         <h1 class="blog-title">
           <a class="blog-link" href="/">{{ site_setup.title }} <i class="fa-solid fa-code"></i></a>
         </h1>
-        
-        <!-- Menu centralizado -->
-        {% if site_setup.show_menu %}
-          <nav class="menu">
-            <ul class="menu-items">
-              {% for link in site_setup.menulink_set.all %} 
-                <li class="menu-item">
-                  {% if link.new_tab %}
-                    <a target="_blank" class="menu-link" href={{ link.url_or_path }}>{{ link.text }}</a>
-                {% else %}
-                    <a class="menu-link" href={{ link.url_or_path }}>{{ link.text }}</a>
-                  {% endif %}
-                </li>
-              {%endfor%}
-            </ul>
-          </nav>
-        {% endif %}
 
-        <!-- Barra de pesquisa -->
-         {% if site_setup.show_search %}
-          <div class="search">
-            <form class="search-form" action="#" method="get">
-              <div class="search-content">
-                <label class="sr-only" id="search-label" for="search-input">Search</label>
-                <input
-                  class="search-input"
-                  type="search"
-                  name="search"
-                  id="search-input"
-                  placeholder="Pesquisar"
-                >
-                <button class="search-btn" type="submit" aria-labelledby="search-label">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        {% endif %}
-      </div>
+        <!-- Menu + busca à direita -->
+        <div class="header-right">
+          {% if site_setup.show_menu %}
+            <nav class="menu">
+              <ul class="menu-items">
+                {% for link in site_setup.menulink_set.all %}
+                  <li class="menu-item">
+                    {% if link.new_tab %}
+                      <a target="_blank" class="menu-link" href="{{ link.url_or_path }}">{{ link.text }}</a>
+                    {% else %}
+                      <a class="menu-link" href="{{ link.url_or_path }}">{{ link.text }}</a>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          {% endif %}
 
+          {% if site_setup.show_search %}
+            <div class="search">
+              <form class="search-form" action="#" method="get">
+                <div class="search-content">
+                  <label class="sr-only" id="search-label" for="search-input">Search</label>
+                  <input
+                    class="search-input"
+                    type="search"
+                    name="search"
+                    id="search-input"
+                    placeholder="Pesquisar"
+                  >
+                  <button class="search-btn" type="submit" aria-labelledby="search-label">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          {% endif %}
+        </div> <!-- /header-right -->
+
+      </div> <!-- /header-row -->
     </div>
   </div>
 </header>
