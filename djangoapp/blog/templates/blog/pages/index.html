@@ -6,6 +6,9 @@
       <div class=>
 
         {% if page_obj %}
+        {% if page_title %}
+          <span class="title-in-page">{{ page_title_main }} </span>
+        {% endif %}
           <div class="card-grid">
             {% for post in page_obj %}
               {% include 'blog/partials/_post-card.html' with i=forloop.counter0 %}

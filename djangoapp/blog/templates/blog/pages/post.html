@@ -17,17 +17,7 @@
   <div class="single-post-content section-content-narrow">
     <div class="single-post-gap section-gap">
 
-      {% if post.cover and post.cover_in_post_content %}
-        <div class="single-post-cover pb-base">
-          <img
-            loading="lazy"
-            src="{{ post.cover.url }}"
-            alt=" Capa do post: {{ post.title }}"
-          >
-        </div>
-      {% endif %}
-
-      <h2 class="single-post-title pb-base center">
+      <h2 class="single-post-title pb-base ">
         {{ post.title }}
       </h2>
 
@@ -83,6 +73,19 @@
       </p>
 
       <div class="separator"></div>
+
+      {% if post.cover and post.cover_in_post_content %}
+        <div class="single-post-cover pb-base">
+          <img
+            loading="lazy"
+            src="{{ post.cover.url }}"
+            alt=" Capa do post: {{ post.title }}"
+          >
+        </div>
+      {% endif %}
+
+
+      
 
       <div class="single-post-content">
         {{ post.content | safe}}

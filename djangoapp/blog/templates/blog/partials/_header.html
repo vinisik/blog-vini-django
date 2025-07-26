@@ -58,6 +58,9 @@
         </div> <!-- /header-right -->
 
       </div> <!-- /header-row -->
+      {% if site_setup.show_description %}
+        <p class="blog-description  center">{{ site_setup.description }}</p>
+      {% endif %}
     </div>
   </div>
 </header>
