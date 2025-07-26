@@ -45,6 +45,8 @@
   --fs-h4: clamp(2.2rem, 1.8769230769230774rem + 0.7692307692307687vw, 2.8rem);
   --fs-h5: clamp(1.8rem, 1.476923076923077rem + 0.769230769230769vw, 2.4rem);
   --fs-h6: clamp(1.6rem, 1.2769230769230768rem + 0.7692307692307694vw, 2.2rem);
+  --fs-sm: clamp(1.4rem, 1.076923076923077rem + 0.5128205128205127vw, 2rem);
+  --fs-smlst: clamp(1.2rem, 0.876923076923077rem + 0.2564102564102566vw, 1.6rem);
 
   /* Line-Heights */
   --lh-regular: 1.5;
@@ -241,8 +243,15 @@ html,
   max-width: var(--mw-grid);
   margin: auto;
   padding: var(--spacing-base);
-  font-size: var(--fs-h5);
-  font-weight: bold;
+  font-size: var(--fs-smlst);
+
+}
+
+.title-in-page-post {
+  max-width: var(--mw-grid);
+  margin: auto;
+  font-size: var(--fs-smlst);
+  padding-bottom: var(--spacing-base);
 }
 
 .pb-base {
