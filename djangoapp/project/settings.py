@@ -141,7 +141,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # /data/web/static
-STATIC_ROOT = DATA_DIR / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 
 MEDIA_URL = '/media/'
 # /data/web/media
