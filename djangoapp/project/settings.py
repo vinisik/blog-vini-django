@@ -17,17 +17,6 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR.parent / 'data' / 'web'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Isso ajuda na coleta correta dos arquivos na Vercel
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # se tiver uma pasta "static"
-]
-
-# CSRF para produção na Vercel
-CSRF_TRUSTED_ORIGINS = ['https://vini-blog.vercel.app']
-
 # DOTENV
 load_dotenv(BASE_DIR.parent / 'dotenv_files' / '.env', override=True)
 
