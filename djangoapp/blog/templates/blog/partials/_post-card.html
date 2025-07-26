@@ -23,9 +23,11 @@
     </div>
 
     <div class="card-content-wrapper">
-      <p class="card-content">
-        {{ post.excerpt }} 
-      </p>
+      <a class="card-action-link" href="{{ post.get_absolute_url }}">
+        <p class="card-content">
+          {{ post.excerpt }} 
+        </p>
+      </a>
 
       <div class="card-actions">
         <a class="card-action-link" href="{{ post.get_absolute_url }}">
